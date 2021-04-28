@@ -80,12 +80,10 @@ def lte_main(args):
 
         #Can now begin parsing frames from each antenna and calculating RSSI
         for sdr in sdrs:
-            sdr.parse_ants(args, collect_indx)
             #args.num_save specifies upper bound of frames collected
-            if (len(sdr.ant1) > args.num_save):
-                sdr.ant1 = sdr.ant1[:args.num_save]
-                sdr.ant2 = sdr.ant2[:args.num_save]
+            if (len(sdr.pos) > args.num_save):
                 sdr.pos = sdr.pos[:args.num_save]
+            sdr.parse_ants(args, collect_indx)
             sdr.calc_rssi(args)
 
             #Add location to dataset and make labels
@@ -108,7 +106,7 @@ def lte_main(args):
 
             sdr.clear_values()
         elapsed_time = timeit.default_timer() - start_time
-        print("File " + sdr.files[collect_indx][0][11:] + " completed in " + str(elapsed_time) + " seconds")
+        print("File " + sdr.files[collect_indx][0][11:] + " containing " + str(total_rx.shape[0]) + " frames completed in " + str(elapsed_time) + " seconds")
 
     print("Done")
 
@@ -120,12 +118,12 @@ if __name__ == '__main__':
                         help='Path to all files')
     parser.add_argument('-p', action='store_true', default=False, dest='plot_frames',
                         help='Plots frames in matplotlib to appear on screen')
-    parser.add_argument('-n', action='store', type=int, default=2000, dest='num_save',
+    parser.add_argument('-n', action='store', type=int, default=800, dest='num_save',
                         help='The upper bound of how many frames will be saved to file')
     parser.add_argument('-d', action='store_true', default=False, dest='debug', help='Turns on debug mode')
     parser.add_argument('-b', action='store', type=int, default=500, dest='buffer',
                         help='Number of samples to save before and after frame')
-    parser.add_argument('-sdr', action='store', type=int, default=4, dest='num_sdr',
+    parser.add_argument('-sdr', action='store', type=int, default=1, dest='num_sdr',
                         help='Number of SDRs used in data collection')
     args = parser.parse_args()
 

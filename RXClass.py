@@ -34,13 +34,16 @@ class SDR:
         #Calculates samples between frames and remove any frames that are too detected at an irregular interval (Most likely noise)
         self.pos_diffs = [j-i for i, j in zip(self.pos[:-1], self.pos[1:])]
         diff_median = stats.median(self.pos_diffs)
-        self.pos = [x for x, y in zip(self.pos, self.pos_diffs) if abs(y - diff_median) < 500]
-        self.pos_diffs = [y for y in self.pos_diffs if abs(y - diff_median) < 500]
+        self.pos = [x for x, y in zip(self.pos, self.pos_diffs) if abs(y - 307200) < 500]
+        if (args.debug):
+            print("Median distance is: ", diff_median)
+            print(len(self.pos_diffs) + 1 - len(self.pos), "frames discarded out of", len(self.pos_diffs) + 1, "frames")
+        self.pos_diffs = [y for y in self.pos_diffs if abs(y - 307200) < 500]
 
     def parse_ants(self, args, index):
         self.ant1 = np.fromfile(args.base_path + self.files[index][1], dtype=np.complex64).tolist()
-        self.ant2 = np.fromfile(args.base_path + self.files[index][2], dtype=np.complex64).tolist()
         self.ant1 = [self.ant1[x - args.buffer:x + args.buffer + FRAME_SIZE] for x in self.pos]
+        self.ant2 = np.fromfile(args.base_path + self.files[index][2], dtype=np.complex64).tolist()
         self.ant2 = [self.ant2[x - args.buffer:x + args.buffer + FRAME_SIZE] for x in self.pos]
         if (args.plot_frames):
             plt.plot(np.abs(self.ant1[0]))

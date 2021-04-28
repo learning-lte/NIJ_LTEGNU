@@ -31,9 +31,9 @@ def combine_main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Takes 5 files (file sink, file sink header, parse data, and '
                                                  'CSI data and organizes them into a text file where each lline corresponds to a single frame')
-    parser.add_argument('-store_path', action='store', default="/home/nij/GNU/RawData/hddd/", dest='store_path',
+    parser.add_argument('-store_path', action='store', default="/home/nij/GNU/RawData/", dest='store_path',
                         help='Path to existing files to be combined')
-    parser.add_argument('-save_path', action='store', default="/home/nij/GNU/RawData/hddd/", dest='save_path',
+    parser.add_argument('-save_path', action='store', default="/home/nij/GNU/RawData/", dest='save_path',
                         help='Path to new saved file')
     parser.add_argument('-b', action='store', type=int, default=500, dest='buffer',
                         help='Number of samples saved before and after frame')
