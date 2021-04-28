@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<block>
+  <name>lte_detector</name>
+  <key>NIJ_lte_detector</key>
+  <category>[NIJ]</category>
+  <import>import NIJ</import>
+  <make>NIJ.lte_detector($cor_thresh, $amp_thresh, $buffer, $samp_fact, $debug, $plateau, $filename)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <callback>open($filename)</callback>
+	<param>
+		<name>Data Filepath</name>
+		<key>filename</key>
+		<value></value>
+		<type>file_save</type>
+	</param>
+
+<param>
+    <name>Correlation Threshold</name>
+    <key>cor_thresh</key>
+    <type>real</type>
+  </param>
+
+  <param>
+    <name>Amplitude Threshold</name>
+    <key>amp_thresh</key>
+    <type>real</type>
+  </param>
+
+  <param>
+    <name>Buffer Size</name>
+    <key>buffer</key>
+    <type>int</type>
+  </param>
+
+  <param>
+    <name>Sampling Factor</name>
+    <key>samp_fact</key>
+    <type>real</type>
+  </param>
+
+  <param>
+  <name>Debug</name>
+  <key>debug</key>
+  <value>False</value>
+  <type>bool</type>
+  <option>
+	<name>Enable</name>
+	<key>True</key>
+  </option>
+  <option>
+	<name>Disable</name>
+	<key>False</key>
+  </option>
+  </param>
+
+  <param>
+    <name>Plateau</name>
+    <key>plateau</key>
+    <type>int</type>
+  </param>
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <sink>
+    <name>corr</name>
+    <type>float</type>
+  </sink>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <sink>
+    <name>in1</name>
+    <type>complex</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <source>
+    <name>out</name>
+    <type>complex</type>
+  </source>
+</block>

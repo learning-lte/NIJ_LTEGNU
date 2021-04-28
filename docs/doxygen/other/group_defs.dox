@@ -1,0 +1,7 @@
+/*!
+ * \defgroup block GNU Radio NIJ C++ Signal Processing Blocks
+ * \brief All C++ blocks that can be used from the NIJ GNU Radio
+ *        module are listed here or in the subcategories below.
+ *
+ */
+

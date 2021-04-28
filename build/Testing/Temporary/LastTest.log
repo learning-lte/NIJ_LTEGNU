@@ -1,0 +1,20 @@
+Start testing: Apr 26 22:19 CDT
+----------------------------------------------------------
+1/1 Testing: test_NIJ
+1/1 Test: test_NIJ
+Command: "/bin/sh" "/home/nij/GNU/main/src/gr-NIJ/build/lib/test_NIJ_test.sh"
+Directory: /home/nij/GNU/main/src/gr-NIJ/build/lib
+"test_NIJ" start time: Apr 26 22:19 CDT
+Output:
+----------------------------------------------------------
+
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_NIJ" end time: Apr 26 22:19 CDT
+"test_NIJ" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 26 22:19 CDT

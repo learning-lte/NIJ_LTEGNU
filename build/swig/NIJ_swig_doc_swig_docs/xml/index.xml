@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classgr_1_1NIJ_1_1lte__ul__detector" kind="class"><name>gr::NIJ::lte_ul_detector</name>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a89eb767bf8829d86270f2a5ec7bd3781" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a8423af37b83e70b23c6aba3ba764406a" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1NIJ" kind="namespace"><name>gr::NIJ</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1a1aacbc2dd42117595612b9666dc06772" kind="define"><name>NIJ_API</name></member>
+  </compound>
+  <compound refid="lte__ul__detector_8h" kind="file"><name>lte_ul_detector.h</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_0b0a721d2c850dd11bee8ff64dee11c9" kind="dir"><name>NIJ</name>
+  </compound>
+</doxygenindex>

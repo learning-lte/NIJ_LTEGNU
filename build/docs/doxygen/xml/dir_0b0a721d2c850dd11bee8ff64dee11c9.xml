@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_0b0a721d2c850dd11bee8ff64dee11c9" kind="dir">
+    <compoundname>NIJ</compoundname>
+    <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="lte__ul__detector_8h">lte_ul_detector.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nij/GNU/main/src/gr-NIJ/include/NIJ/"/>
+  </compounddef>
+</doxygen>

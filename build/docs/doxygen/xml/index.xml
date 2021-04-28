@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classgr_1_1NIJ_1_1lte__ul__detector" kind="class"><name>gr::NIJ::lte_ul_detector</name>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a89eb767bf8829d86270f2a5ec7bd3781" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a8423af37b83e70b23c6aba3ba764406a" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1NIJ_1_1lte__ul__detector__impl" kind="class"><name>gr::NIJ::lte_ul_detector_impl</name>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6" kind="enum"><name>@0</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6a34e0b1d59262b97c806570292d5650de" kind="enumvalue"><name>SEARCH</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6afe326335097a28b6a5ccc1242d3ccf68" kind="enumvalue"><name>COPY</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ae24e8964cc446dafc90ca4bee12e59b8" kind="variable"><name>d_corr_thresh</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1aecacca9eda75a8b84a32eca292b9ff79" kind="variable"><name>d_amp_thresh</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a5493032fa1e1d1c4ee67ac3f70e75225" kind="variable"><name>d_samp_fact</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9fb6270e705c44171d26f22e04618bab" kind="variable"><name>d_buffer</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a4dbd833d4f7008eba54bf0a4808a67bc" kind="variable"><name>d_plateau</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a10a9088ef83312dc236c822561e9d0fa" kind="variable"><name>d_state</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a48aed1c8663fd0bdf922250aba95cc13" kind="variable"><name>d_copied</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1af48387291940f127956c92ca924e1860" kind="variable"><name>d_frame_counter</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ad764155d145df731b0897f1333a9a778" kind="variable"><name>MIN_PLATEAU</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9bf59454a40cfd7216297c903d28affd" kind="function"><name>lte_ul_detector_impl</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a12cfab49d705f0c890384cdcf28fd407" kind="function"><name>~lte_ul_detector_impl</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a3428e19b3fb1a6e271b032afac529c3d" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a18ae3728ae9bc42802da31de5f80a334" kind="function"><name>general_work</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9b2b2e771feb910a164cf151369836ee" kind="function"><name>insert_tag</name></member>
+    <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a246e4042951293be63ba99dce9f7fbd6" kind="function"><name>get_input_sizes</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1NIJ" kind="namespace"><name>gr::NIJ</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1a1aacbc2dd42117595612b9666dc06772" kind="define"><name>NIJ_API</name></member>
+  </compound>
+  <compound refid="group__defs_8dox" kind="file"><name>group_defs.dox</name>
+  </compound>
+  <compound refid="lte__ul__detector_8h" kind="file"><name>lte_ul_detector.h</name>
+  </compound>
+  <compound refid="lte__ul__detector__impl_8h" kind="file"><name>lte_ul_detector_impl.h</name>
+  </compound>
+  <compound refid="main__page_8dox" kind="file"><name>main_page.dox</name>
+  </compound>
+  <compound refid="group__block" kind="group"><name>block</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="dir_0b0a721d2c850dd11bee8ff64dee11c9" kind="dir"><name>NIJ</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classgr_1_1NIJ_1_1lte__ul__detector__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::NIJ::lte_ul_detector_impl</compoundname>
+    <basecompoundref refid="classgr_1_1NIJ_1_1lte__ul__detector" prot="public" virt="non-virtual">gr::NIJ::lte_ul_detector</basecompoundref>
+    <includes refid="lte__ul__detector__impl_8h" local="no">lte_ul_detector_impl.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6" prot="private" static="no">
+        <name>@0</name>
+        <enumvalue id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6a34e0b1d59262b97c806570292d5650de" prot="private">
+          <name>SEARCH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6afe326335097a28b6a5ccc1242d3ccf68" prot="private">
+          <name>COPY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="38" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ae24e8964cc446dafc90ca4bee12e59b8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::NIJ::lte_ul_detector_impl::d_corr_thresh</definition>
+        <argsstring></argsstring>
+        <name>d_corr_thresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="33" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1aecacca9eda75a8b84a32eca292b9ff79" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::NIJ::lte_ul_detector_impl::d_amp_thresh</definition>
+        <argsstring></argsstring>
+        <name>d_amp_thresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="34" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a5493032fa1e1d1c4ee67ac3f70e75225" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::d_samp_fact</definition>
+        <argsstring></argsstring>
+        <name>d_samp_fact</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="35" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9fb6270e705c44171d26f22e04618bab" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::d_buffer</definition>
+        <argsstring></argsstring>
+        <name>d_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="36" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a4dbd833d4f7008eba54bf0a4808a67bc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::d_plateau</definition>
+        <argsstring></argsstring>
+        <name>d_plateau</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="37" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a10a9088ef83312dc236c822561e9d0fa" prot="private" static="no" mutable="no">
+        <type>enum gr::NIJ::lte_ul_detector_impl::@0</type>
+        <definition>enum gr::NIJ::lte_ul_detector_impl::@0  gr::NIJ::lte_ul_detector_impl::d_state</definition>
+        <argsstring></argsstring>
+        <name>d_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a48aed1c8663fd0bdf922250aba95cc13" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::d_copied</definition>
+        <argsstring></argsstring>
+        <name>d_copied</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="39" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1af48387291940f127956c92ca924e1860" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::d_frame_counter</definition>
+        <argsstring></argsstring>
+        <name>d_frame_counter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="40" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ad764155d145df731b0897f1333a9a778" prot="private" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int gr::NIJ::lte_ul_detector_impl::MIN_PLATEAU</definition>
+        <argsstring></argsstring>
+        <name>MIN_PLATEAU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="41" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9bf59454a40cfd7216297c903d28affd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::NIJ::lte_ul_detector_impl::lte_ul_detector_impl</definition>
+        <argsstring>(double cor_thresh, double amp_thresh, int buffer, int samp_fact, bool debug, int plateau)</argsstring>
+        <name>lte_ul_detector_impl</name>
+        <param>
+          <type>double</type>
+          <declname>cor_thresh</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>amp_thresh</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samp_fact</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>plateau</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="44" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a12cfab49d705f0c890384cdcf28fd407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::NIJ::lte_ul_detector_impl::~lte_ul_detector_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~lte_ul_detector_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a3428e19b3fb1a6e271b032afac529c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::NIJ::lte_ul_detector_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a18ae3728ae9bc42802da31de5f80a334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::NIJ::lte_ul_detector_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9b2b2e771feb910a164cf151369836ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::NIJ::lte_ul_detector_impl::insert_tag</definition>
+        <argsstring>(uint64_t item, int frame_counter, uint64_t input_item, int o)</argsstring>
+        <name>insert_tag</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frame_counter</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>input_item</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="54" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a246e4042951293be63ba99dce9f7fbd6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>static std::vector&lt;int&gt; gr::NIJ::lte_ul_detector_impl::get_input_sizes</definition>
+        <argsstring>()</argsstring>
+        <name>get_input_sizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="55" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>gr::NIJ::lte_ul_detector</label>
+        <link refid="classgr_1_1NIJ_1_1lte__ul__detector"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>gr::NIJ::lte_ul_detector_impl</label>
+        <link refid="classgr_1_1NIJ_1_1lte__ul__detector__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>gr::block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>gr::NIJ::lte_ul_detector</label>
+        <link refid="classgr_1_1NIJ_1_1lte__ul__detector"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>gr::NIJ::lte_ul_detector_impl</label>
+        <link refid="classgr_1_1NIJ_1_1lte__ul__detector__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>gr::block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" line="30" column="1" bodyfile="/home/nij/GNU/main/src/gr-NIJ/lib/lte_ul_detector_impl.h" bodystart="29" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6afe326335097a28b6a5ccc1242d3ccf68" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>COPY</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1aecacca9eda75a8b84a32eca292b9ff79" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_amp_thresh</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9fb6270e705c44171d26f22e04618bab" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_buffer</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a48aed1c8663fd0bdf922250aba95cc13" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_copied</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ae24e8964cc446dafc90ca4bee12e59b8" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_corr_thresh</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1af48387291940f127956c92ca924e1860" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_frame_counter</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a4dbd833d4f7008eba54bf0a4808a67bc" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_plateau</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a5493032fa1e1d1c4ee67ac3f70e75225" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_samp_fact</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a10a9088ef83312dc236c822561e9d0fa" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>d_state</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a3428e19b3fb1a6e271b032afac529c3d" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a18ae3728ae9bc42802da31de5f80a334" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a246e4042951293be63ba99dce9f7fbd6" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>get_input_sizes</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9b2b2e771feb910a164cf151369836ee" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>insert_tag</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a9bf59454a40cfd7216297c903d28affd" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>lte_ul_detector_impl</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a8423af37b83e70b23c6aba3ba764406a" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1ad764155d145df731b0897f1333a9a778" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>MIN_PLATEAU</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a882444d4c34e1bdaba1ef7ad216bd0a6a34e0b1d59262b97c806570292d5650de" prot="private" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>SEARCH</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector_1a89eb767bf8829d86270f2a5ec7bd3781" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1NIJ_1_1lte__ul__detector__impl_1a12cfab49d705f0c890384cdcf28fd407" prot="public" virt="non-virtual"><scope>gr::NIJ::lte_ul_detector_impl</scope><name>~lte_ul_detector_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
