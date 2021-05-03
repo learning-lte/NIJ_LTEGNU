@@ -22,15 +22,16 @@ from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
 from gnuradio import qtgui
+from gnuradio import uhd
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import NIJ
 import ieee802_11
-import pmt
 import sip
 import sys
+import time
 from gnuradio import qtgui
 
 
@@ -71,10 +72,10 @@ class lte_rx(gr.top_block, Qt.QWidget):
         self.lo_offset = lo_offset = 0
         self.gain = gain = 0.96
         self.freq = freq = 1880e6
-        self.file_suffix = file_suffix = "3.35_1.98_3_0"
-        self.corr_threshold = corr_threshold = 0.34
+        self.file_suffix = file_suffix = "2.10_2.98_3_0"
+        self.corr_threshold = corr_threshold = 0.2
         self.buffer_size = buffer_size = 500*samp_fact
-        self.amp_threshold = amp_threshold = 0.34
+        self.amp_threshold = amp_threshold = 0.2
 
         ##################################################
         # Blocks
@@ -91,12 +92,45 @@ class lte_rx(gr.top_block, Qt.QWidget):
         self._samp_rate_combo_box.currentIndexChanged.connect(
         	lambda i: self.set_samp_rate(self._samp_rate_options[i]))
         self.top_grid_layout.addWidget(self._samp_rate_tool_bar)
-        self._corr_threshold_range = Range(0, 1, .0001, 0.34, 200)
+        self._lo_offset_options = (0, 6e6, 11e6, )
+        self._lo_offset_labels = (str(self._lo_offset_options[0]), str(self._lo_offset_options[1]), str(self._lo_offset_options[2]), )
+        self._lo_offset_tool_bar = Qt.QToolBar(self)
+        self._lo_offset_tool_bar.addWidget(Qt.QLabel("lo_offset"+": "))
+        self._lo_offset_combo_box = Qt.QComboBox()
+        self._lo_offset_tool_bar.addWidget(self._lo_offset_combo_box)
+        for label in self._lo_offset_labels: self._lo_offset_combo_box.addItem(label)
+        self._lo_offset_callback = lambda i: Qt.QMetaObject.invokeMethod(self._lo_offset_combo_box, "setCurrentIndex", Qt.Q_ARG("int", self._lo_offset_options.index(i)))
+        self._lo_offset_callback(self.lo_offset)
+        self._lo_offset_combo_box.currentIndexChanged.connect(
+        	lambda i: self.set_lo_offset(self._lo_offset_options[i]))
+        self.top_grid_layout.addWidget(self._lo_offset_tool_bar)
+        self._gain_range = Range(0, 1, 0.01, 0.96, 200)
+        self._gain_win = RangeWidget(self._gain_range, self.set_gain, "gain", "counter_slider", float)
+        self.top_grid_layout.addWidget(self._gain_win)
+        self._freq_range = Range(900e6, 2.6e9, 1e6, 1880e6, 200)
+        self._freq_win = RangeWidget(self._freq_range, self.set_freq, "freq", "counter_slider", float)
+        self.top_grid_layout.addWidget(self._freq_win)
+        self._corr_threshold_range = Range(0, 1, .0001, 0.2, 200)
         self._corr_threshold_win = RangeWidget(self._corr_threshold_range, self.set_corr_threshold, "corr_threshold", "counter_slider", float)
         self.top_grid_layout.addWidget(self._corr_threshold_win)
-        self._amp_threshold_range = Range(0, 1, .0001, 0.34, 200)
+        self._amp_threshold_range = Range(0, 1, .0001, 0.2, 200)
         self._amp_threshold_win = RangeWidget(self._amp_threshold_range, self.set_amp_threshold, "amp_threshold", "counter_slider", float)
         self.top_grid_layout.addWidget(self._amp_threshold_win)
+        self.uhd_usrp_source_0 = uhd.usrp_source(
+        	",".join(('', "name=SDR4")),
+        	uhd.stream_args(
+        		cpu_format="fc32",
+        		channels=range(1),
+        	),
+        )
+        self.uhd_usrp_source_0.set_clock_source('external', 0)
+        self.uhd_usrp_source_0.set_time_source('external', 0)
+        self.uhd_usrp_source_0.set_samp_rate(samp_rate)
+        self.uhd_usrp_source_0.set_center_freq(uhd.tune_request(freq, rf_freq = freq - lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0.set_normalized_gain(gain, 0)
+        self.uhd_usrp_source_0.set_antenna('RX2', 0)
+        self.uhd_usrp_source_0.set_auto_dc_offset(True, 0)
+        self.uhd_usrp_source_0.set_auto_iq_balance(True, 0)
         self.qtgui_time_sink_x_0_1 = qtgui.time_sink_c(
         	7680*2, #size
         	samp_rate, #samp_rate
@@ -247,30 +281,10 @@ class lte_rx(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self._lo_offset_options = (0, 6e6, 11e6, )
-        self._lo_offset_labels = (str(self._lo_offset_options[0]), str(self._lo_offset_options[1]), str(self._lo_offset_options[2]), )
-        self._lo_offset_tool_bar = Qt.QToolBar(self)
-        self._lo_offset_tool_bar.addWidget(Qt.QLabel("lo_offset"+": "))
-        self._lo_offset_combo_box = Qt.QComboBox()
-        self._lo_offset_tool_bar.addWidget(self._lo_offset_combo_box)
-        for label in self._lo_offset_labels: self._lo_offset_combo_box.addItem(label)
-        self._lo_offset_callback = lambda i: Qt.QMetaObject.invokeMethod(self._lo_offset_combo_box, "setCurrentIndex", Qt.Q_ARG("int", self._lo_offset_options.index(i)))
-        self._lo_offset_callback(self.lo_offset)
-        self._lo_offset_combo_box.currentIndexChanged.connect(
-        	lambda i: self.set_lo_offset(self._lo_offset_options[i]))
-        self.top_grid_layout.addWidget(self._lo_offset_tool_bar)
         self.ieee802_11_moving_average_xx_1 = ieee802_11.moving_average_ff(window_size + 36)
         self.ieee802_11_moving_average_xx_0 = ieee802_11.moving_average_cc(window_size)
-        self._gain_range = Range(0, 1, 0.01, 0.96, 200)
-        self._gain_win = RangeWidget(self._gain_range, self.set_gain, "gain", "counter_slider", float)
-        self.top_grid_layout.addWidget(self._gain_win)
-        self._freq_range = Range(900e6, 2.6e9, 1e6, 1880e6, 200)
-        self._freq_win = RangeWidget(self._freq_range, self.set_freq, "freq", "counter_slider", float)
-        self.top_grid_layout.addWidget(self._freq_win)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/nij/GNU/RawData/lte_ant1_3.35_1.98_3_0', False)
-        self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
         self.blocks_divide_xx_0 = blocks.divide_ff(1)
         self.blocks_delay_0_0 = blocks.delay(gr.sizeof_gr_complex*1, 36)
         self.blocks_conjugate_cc_0 = blocks.conjugate_cc()
@@ -293,13 +307,13 @@ class lte_rx(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_delay_0_0, 0), (self.blocks_conjugate_cc_0, 0))
         self.connect((self.blocks_divide_xx_0, 0), (self.NIJ_lte_detector_0, 0))
         self.connect((self.blocks_divide_xx_0, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.blocks_file_source_0, 0), (self.blocks_complex_to_mag_squared_0, 0))
-        self.connect((self.blocks_file_source_0, 0), (self.blocks_delay_0_0, 0))
-        self.connect((self.blocks_file_source_0, 0), (self.blocks_multiply_xx_0, 0))
-        self.connect((self.blocks_file_source_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.ieee802_11_moving_average_xx_0, 0))
         self.connect((self.ieee802_11_moving_average_xx_0, 0), (self.blocks_complex_to_mag_0, 0))
         self.connect((self.ieee802_11_moving_average_xx_1, 0), (self.blocks_divide_xx_0, 1))
+        self.connect((self.uhd_usrp_source_0, 0), (self.blocks_complex_to_mag_squared_0, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.blocks_delay_0_0, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.blocks_multiply_xx_0, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.qtgui_time_sink_x_0_0, 0))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "lte_rx")
@@ -313,6 +327,7 @@ class lte_rx(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate
         self._samp_rate_callback(self.samp_rate)
         self.set_samp_fact(int(self.samp_rate/(7.68e6)))
+        self.uhd_usrp_source_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
@@ -344,18 +359,26 @@ class lte_rx(gr.top_block, Qt.QWidget):
     def set_lo_offset(self, lo_offset):
         self.lo_offset = lo_offset
         self._lo_offset_callback(self.lo_offset)
+        self.uhd_usrp_source_0.set_center_freq(uhd.tune_request(self.freq, rf_freq = self.freq - self.lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0.set_center_freq(uhd.tune_request(self.freq, rf_freq = self.freq - self.lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_gain(self):
         return self.gain
 
     def set_gain(self, gain):
         self.gain = gain
+        self.uhd_usrp_source_0.set_normalized_gain(self.gain, 0)
+
+        self.uhd_usrp_source_0.set_normalized_gain(self.gain, 1)
+
 
     def get_freq(self):
         return self.freq
 
     def set_freq(self, freq):
         self.freq = freq
+        self.uhd_usrp_source_0.set_center_freq(uhd.tune_request(self.freq, rf_freq = self.freq - self.lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL), 0)
+        self.uhd_usrp_source_0.set_center_freq(uhd.tune_request(self.freq, rf_freq = self.freq - self.lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL), 1)
 
     def get_file_suffix(self):
         return self.file_suffix

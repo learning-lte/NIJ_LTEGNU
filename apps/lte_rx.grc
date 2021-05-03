@@ -97,7 +97,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.34</value>
+      <value>0.2</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -214,7 +214,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.34</value>
+      <value>0.2</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -320,7 +320,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>"3.35_1.98_3_0"</value>
+      <value>"2.10_2.98_3_0"</value>
     </param>
   </block>
   <block>
@@ -1154,11 +1154,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>file</key>
-      <value>/home/nij/GNU/RawData/lte_ant1_3.35_1.98_3_0</value>
+      <value>"/home/nij/GNU/RawData/lte_ant1_" + file_suffix</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1421,7 +1421,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1116, 656)</value>
+      <value>(1188, 608)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3666,11 +3666,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(48, 236)</value>
+      <value>(0, 236)</value>
     </param>
     <param>
       <key>_rotation</key>

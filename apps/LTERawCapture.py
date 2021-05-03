@@ -65,9 +65,9 @@ class LTERawCapture(gr.top_block, Qt.QWidget):
         ##################################################
         self.samp_rate = samp_rate = 7.68e6
         self.lo_offset = lo_offset = 0
-        self.gain = gain = 0.92
+        self.gain = gain = 0.75
         self.freq = freq = 1880e6
-        self.file_suffix = file_suffix = "3.35_1.98_3_0"
+        self.file_suffix = file_suffix = "2.10_2.98_3_0"
 
         ##################################################
         # Blocks
@@ -96,7 +96,7 @@ class LTERawCapture(gr.top_block, Qt.QWidget):
         self._lo_offset_combo_box.currentIndexChanged.connect(
         	lambda i: self.set_lo_offset(self._lo_offset_options[i]))
         self.top_grid_layout.addWidget(self._lo_offset_tool_bar)
-        self._gain_range = Range(0, 1, 0.01, 0.92, 200)
+        self._gain_range = Range(0, 1, 0.01, 0.75, 200)
         self._gain_win = RangeWidget(self._gain_range, self.set_gain, "gain", "counter_slider", float)
         self.top_grid_layout.addWidget(self._gain_win)
         self._freq_range = Range(900e6, 2.6e9, 1e6, 1880e6, 200)
